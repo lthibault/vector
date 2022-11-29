@@ -66,8 +66,6 @@ func TestGetSet(t *testing.T) {
 	v := vector.New(is...)
 
 	t.Run("Overwrite", func(t *testing.T) {
-		t.Parallel()
-
 		for i := 0; i < n; i++ {
 			v = v.Set(i, -i)
 		}
@@ -78,8 +76,6 @@ func TestGetSet(t *testing.T) {
 	})
 
 	t.Run("Append", func(t *testing.T) {
-		t.Parallel()
-
 		v2 := v.Set(n, -1)
 
 		assert.NotEqual(t, v, v2, "should not mutate v")
